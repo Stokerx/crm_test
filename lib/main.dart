@@ -117,18 +117,70 @@ class _MyHomePageState extends State<MyHomePage>{
           ],
         ),
       ),
-      body: Center(
-        child: 
-          
-          Text(
-            "Panel",
-            style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 150, 0, 0)),
-          ),
-        
-      ),
+      body: getSelectedOptionWidget(selectedOption),
 
       
     );
   }
+
+  Widget getSelectedOptionWidget(String option) {
+    Color backgroundColor;
+    String text;
+
+    switch (option) {
+      case 'Home':
+        
+        text = 'Home Panel';
+        break;
+      case 'Contact':
+        backgroundColor = Colors.green;
+        text = 'Contact Panel';
+        break;
+      case 'Messenger':
+        backgroundColor = const Color.fromARGB(255, 175, 157, 76);
+        text = 'MSg Panel';
+        break;
+      case 'Productos':
+        backgroundColor = const Color.fromARGB(255, 142, 168, 142);
+        text = 'Productos Panel';
+        break;
+      case 'Campaña':
+        backgroundColor = Colors.green;
+        text = 'Campaing Panel';
+        break;
+      case 'Automatizar':
+        backgroundColor = Colors.green;
+        text = 'Bot Panel';
+        break;
+      case 'Ajustes':
+        backgroundColor = Colors.green;
+        text = 'Settings Panel';
+        break;
+      default:
+        backgroundColor = Colors.grey;
+        text = 'Unknown Panel';
+    }
+
+    return Container(
+    decoration: BoxDecoration(
+      image: DecorationImage(
+        image: NetworkImage("https://c4.wallpaperflare.com/wallpaper/448/174/357/neon-4k-hd-best-for-desktop-wallpaper-preview.jpg"),
+        fit: BoxFit.cover,
+      ),
+    ),
+    child: Center(
+      child: Text(
+        text,
+        style: TextStyle(fontSize: 20, color: Colors.white),
+      ),
+    ),
+  );
+
+
+  }
 }
+
+
+
+
 

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  
 
   // This widget is the root of your application.
   @override
@@ -17,19 +17,31 @@ class MyApp extends StatelessWidget {
             ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 105, 65, 64)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage>{
+  String selectedOption='Home';
+
+  void selectOption(String option){
+    setState(() {
+      selectedOption=option;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(),
       drawer: Drawer(
+        
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -48,56 +60,73 @@ class MyHomePage extends StatelessWidget {
               leading: Icon(Icons.home),
               title: Text('Home'),
               onTap: () {
-                // Acción para la opción 1
+                selectOption('Home');
+                Navigator.pop(context);
               },
             ),
             ListTile(
               leading: Icon(Icons.person_rounded),
               title: Text('Contact'),
               onTap: () {
-                // Acción para la opción 2
+                selectOption('Contact');
+                Navigator.pop(context);
               },
             ),
             ListTile(
               leading: Icon(Icons.chat),
               title:Text("Messenger"),
-              onTap: () {},
+              onTap: () {
+                selectOption('Messenger');
+                Navigator.pop(context);
+              },
             ),
             ListTile(
               leading: Icon(Icons.grading_outlined),
               title: Text("Productos"),
-              onTap: () {},
+              onTap: () {
+                selectOption('Productos');
+                Navigator.pop(context);
+              },
             ),
             
             ListTile(
               leading: Icon(Icons.campaign),
               title: Text("Campaña"),
-              onTap: () {},
+              onTap: () {
+                selectOption('Campaña');
+                Navigator.pop(context);
+              },
             ),
             ListTile(
               leading: Icon(Icons.rocket),
               title: Text("Automatizar"),
-              onTap: () {},
+              onTap: () {
+                selectOption('Automatizar');
+                Navigator.pop(context);
+              },
             ),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text("Ajustes"),
-              onTap: () {},
+              onTap: () {
+                selectOption('Ajustes');
+                Navigator.pop(context);
+              },
             ),
             // Agrega más opciones aquí
           ],
         ),
       ),
       body: Center(
-        child: Container(
-          child: 
+        child: 
           
           Text(
             "Panel",
             style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 150, 0, 0)),
           ),
-        ),
+        
       ),
+
       
     );
   }

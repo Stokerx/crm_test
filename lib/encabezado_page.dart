@@ -11,7 +11,7 @@ class _EncabezadoState extends State<Encabezado> {
   @override
   Widget build(BuildContext context) {
     return Container( 
-      color: Color.fromARGB(255, 100, 100, 100),
+      color: Color.fromARGB(255, 33, 1, 75),
       width: double.infinity,
       height: 200,
       padding: EdgeInsets.only(top: 20.0),

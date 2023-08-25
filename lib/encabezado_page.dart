@@ -23,10 +23,10 @@ class _EncabezadoState extends State<Encabezado> {
             height: 70,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              image: DecorationImage(image: NetworkImage("https://c4.wallpaperflare.com/wallpaper/448/174/357/neon-4k-hd-best-for-desktop-wallpaper-preview.jpg")),
+              image: DecorationImage(image: NetworkImage("https://i.pinimg.com/564x/d5/5f/42/d55f42c1edee2c7f60b803a51f0f17df.jpg")),
             ),
           ),
-          Text("Usuario", style: TextStyle(color: Color.fromARGB(255, 28, 29, 29), fontSize: 20),)
+          Text("Usuario", style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 20),)
         ],
       ),
     );
